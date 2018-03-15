@@ -3,7 +3,7 @@ using AssociativeCache;
 
 namespace AssociativeCacheTests
 {
-    public class FakeHashAlgorithm : IHashAlgorithm
+    public class FakeHashAlgorithm<T> : IHashAlgorithm<T>
     {
         private Dictionary<object, int> fakeValues;
 

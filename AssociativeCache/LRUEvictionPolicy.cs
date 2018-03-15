@@ -2,9 +2,9 @@ using System;
 
 namespace AssociativeCache
 {
-    public class LRUEvictionPolicy : IEvictionPolicy
+    public class LRUEvictionPolicy<K, V> : IEvictionPolicy<K,V> 
     {
-        public int Evict(CacheItem[] cacheItems, int startIndex, int entries)
+        public int Evict(CacheItem<K, V>[] cacheItems, int startIndex, int entries)
         {
             var oldestCacheUsedTime = DateTime.MaxValue;
             var indexOfItemToEvict = -1;
@@ -21,9 +21,9 @@ namespace AssociativeCache
         }
     }
 
-    public class MRUEvictionPolicy : IEvictionPolicy
+    public class MRUEvictionPolicy<K, V> : IEvictionPolicy<K, V> 
     {
-        public int Evict(CacheItem[] cacheItems, int startIndex, int entries)
+        public int Evict(CacheItem<K, V>[] cacheItems, int startIndex, int entries)
         {
             var newestItem = DateTime.MinValue;
             var indexOfItemToEvict = -1;

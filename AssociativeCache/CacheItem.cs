@@ -2,13 +2,13 @@ using System;
 
 namespace AssociativeCache
 {
-    public class CacheItem
+    public class CacheItem<K, V> 
     {
-        public object Key { get; set; }
-        public object Value { get; set; }
+        public K Key { get; set; }
+        public V Value { get; set; }
         public DateTime UpdatedTime { get; set; }
 
-        public CacheItem(object key, object value)
+        public CacheItem(K key, V value)
         {
             Key = key;
             Value = value;

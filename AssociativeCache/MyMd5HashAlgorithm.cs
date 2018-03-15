@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AssociativeCache
 {
-    public class MyMd5HashAlgorithm : IHashAlgorithm
+    public class MyMd5HashAlgorithm<T> : IHashAlgorithm<T> 
     {
         public int Hash(object itemToHash)
         {
@@ -14,7 +14,7 @@ namespace AssociativeCache
         }
     }
     
-    public interface IHashAlgorithm
+    public interface IHashAlgorithm<T> 
     {
         int Hash(object itemToHash);
     }

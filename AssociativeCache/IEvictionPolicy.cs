@@ -1,7 +1,7 @@
 namespace AssociativeCache
 {
-    public interface IEvictionPolicy
+    public interface IEvictionPolicy<K, V> 
     {
-        int Evict(CacheItem[] cacheItems, int startIndex, int numberOfEntries);
+        int Evict(CacheItem<K, V>[] cacheItems, int startIndex, int numberOfEntries);
     }
 }

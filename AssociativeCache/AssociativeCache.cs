@@ -2,33 +2,33 @@
 
 namespace AssociativeCache
 {
-    public class AssociativeCache
+    public class AssociativeCache<K, V> 
     {
         private readonly int _sets;
         private readonly int _entries;
-        private readonly IEvictionPolicy _evictionPolicy;
-        private readonly IHashAlgorithm _hashAlgorithm;
-        private readonly CacheItem[] _cache;
+        private readonly IEvictionPolicy<K, V> _evictionPolicy;
+        private readonly IHashAlgorithm<K> _hashAlgorithm;
+        private readonly CacheItem<K, V>[] _cache;
 
-        public AssociativeCache(int sets) : this(sets, 1, new LRUEvictionPolicy(), new MyMd5HashAlgorithm())
+        public AssociativeCache(int sets) : this(sets, 1, new LRUEvictionPolicy<K, V>(), new MyMd5HashAlgorithm<K>())
         {
         }
         
-        public AssociativeCache(int sets, IEvictionPolicy evictionPolicy, IHashAlgorithm hashAlgorithm)
+        public AssociativeCache(int sets, IEvictionPolicy<K, V> evictionPolicy, IHashAlgorithm<K> hashAlgorithm)
         : this(sets, 1, evictionPolicy, hashAlgorithm)
         {
         }
         
-        public AssociativeCache(int sets, int entries, IEvictionPolicy evictionPolicy, IHashAlgorithm hashAlgorithm)
+        public AssociativeCache(int sets, int entries, IEvictionPolicy<K, V> evictionPolicy, IHashAlgorithm<K> hashAlgorithm)
         {
             _sets = sets;
             _entries = entries;
             _evictionPolicy = evictionPolicy;
             _hashAlgorithm = hashAlgorithm;
-            _cache = new CacheItem[sets * entries];
+            _cache = new CacheItem<K, V>[sets * entries];
         }
 
-        public void Add(CacheItem cacheItem)
+        public void Add(CacheItem<K, V> cacheItem)
         {
             var startIndex = (_hashAlgorithm.Hash(cacheItem.Key) % _sets) * _entries;
             var added = false;
@@ -49,7 +49,7 @@ namespace AssociativeCache
             }
         }
 
-        public object GetKey(object key)
+        public V Get(K key)
         {
             try
             {
