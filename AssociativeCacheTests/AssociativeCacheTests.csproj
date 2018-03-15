@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net461</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.0.0" />
+    <PackageReference Include="NUnit" Version="3.9.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AssociativeCache\AssociativeCache.csproj">
+      <Project>{51AB958E-5340-42A6-ABE8-C3AA4B012A53}</Project>
+      <Name>AssociativeCache</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

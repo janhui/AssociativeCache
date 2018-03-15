@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.csproj", "{5AAD9C0C-41E1-480F-9C09-6C484B4C263E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssociativeCacheTests", "AssociativeCacheTests\AssociativeCacheTests.csproj", "{3BDC841E-B25C-4456-A459-4D27A149EA08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssociativeCache", "AssociativeCache\AssociativeCache.csproj", "{51AB958E-5340-42A6-ABE8-C3AA4B012A53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5AAD9C0C-41E1-480F-9C09-6C484B4C263E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AAD9C0C-41E1-480F-9C09-6C484B4C263E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AAD9C0C-41E1-480F-9C09-6C484B4C263E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AAD9C0C-41E1-480F-9C09-6C484B4C263E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BDC841E-B25C-4456-A459-4D27A149EA08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BDC841E-B25C-4456-A459-4D27A149EA08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BDC841E-B25C-4456-A459-4D27A149EA08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BDC841E-B25C-4456-A459-4D27A149EA08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51AB958E-5340-42A6-ABE8-C3AA4B012A53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51AB958E-5340-42A6-ABE8-C3AA4B012A53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51AB958E-5340-42A6-ABE8-C3AA4B012A53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51AB958E-5340-42A6-ABE8-C3AA4B012A53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
