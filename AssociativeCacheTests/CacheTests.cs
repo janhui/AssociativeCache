@@ -1,3 +1,4 @@
+using System.Threading;
 using AssociativeCache;
 using NUnit.Framework;
 
@@ -48,6 +49,7 @@ namespace AssociativeCacheTests
             //Setup
             var cache = new AssociativeCache<int, string>(2, new LRUEvictionPolicy<int, string>(), new MyMd5HashAlgorithm<int>());
             cache.Add(new CacheItem<int, string>(2, "value1"));
+            Thread.Sleep(50);
             cache.Add(new CacheItem<int, string>(3, "value2"));
             
             //Action
@@ -63,6 +65,7 @@ namespace AssociativeCacheTests
             //Setup
             var cache = new AssociativeCache<string, string>(2, new MRUEvictionPolicy<string, string>(), new MyMd5HashAlgorithm<string>());
             cache.Add(new CacheItem<string, string>("key1", "value1"));
+            Thread.Sleep(50);
             cache.Add(new CacheItem<string, string>("key2", "value2"));
             
             //Action
@@ -84,6 +87,7 @@ namespace AssociativeCacheTests
             fakeHashAlgorithm.ObjectToHash(3, 1);
             var cache = new AssociativeCache<int, string>(2, 2, new LRUEvictionPolicy<int, string>(), fakeHashAlgorithm);
             cache.Add(new CacheItem<int, string>(1, "value1"));
+            Thread.Sleep(50);
             cache.Add(new CacheItem<int, string>(2, "value2"));
             
             //Action
@@ -105,6 +109,7 @@ namespace AssociativeCacheTests
             fakeHashAlgorithm.ObjectToHash(3, 1);
             var cache = new AssociativeCache<int, string>(2, 2, new MRUEvictionPolicy<int, string>(), fakeHashAlgorithm);
             cache.Add(new CacheItem<int, string>(1, "value1"));
+            Thread.Sleep(50);
             cache.Add(new CacheItem<int, string>(2, "value2"));
             
             //Action
@@ -127,8 +132,9 @@ namespace AssociativeCacheTests
             var cache = new AssociativeCache<int, string>(2, 2, new MRUEvictionPolicy<int, string>(), fakeHashAlgorithm);
             cache.Add(new CacheItem<int, string>(1, "value1"));
             cache.Add(new CacheItem<int, string>(2, "value2"));
+            Thread.Sleep(50);
             var value = cache.Get(1);
-            
+
             //Action
             cache.Add(new CacheItem<int, string>(3, "value3"));
             
@@ -151,6 +157,7 @@ namespace AssociativeCacheTests
             var cache = new AssociativeCache<int, string>(2, 2, new LRUEvictionPolicy<int, string>(), fakeHashAlgorithm);
             cache.Add(new CacheItem<int, string>(1, "value1"));
             cache.Add(new CacheItem<int, string>(2, "value2"));
+            Thread.Sleep(50);
             var value = cache.Get(1);
             
             //Action
